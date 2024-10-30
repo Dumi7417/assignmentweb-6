@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Authentication</title>
+  <!-- Link to external stylesheet for custom styles -->
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <!-- Background overlay for visual effect -->
+    <div class="background-blur"></div>
+    
+    <!-- Authentication container for login and logout sections -->
+    <div class="auth-container">
+      
+      <!-- Login form for user input -->
+      <form id="login-form">
+        <h2>Login to CodeFlow.</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+  
+        <button type="submit">Log In</button>
+        <!-- Placeholder for displaying login status messages -->
+        <p id="message"></p>
+      </form>
+  
+      <!-- Section shown only after successful login -->
+      <div id="logout-section" class="hidden">
+        <h2>Welcome, <span id="user-name"></span>!</h2>
+        <button id="logout-button">Log Out</button>
+        <a href="main.html"><button id="visit-website-button">Visit Website</button></a>
+      </div>
+    </div>
+  
+    <!-- Link to JavaScript file handling login/logout actions -->
+    <script src="login.js"></script>
+  </body>
+</html>

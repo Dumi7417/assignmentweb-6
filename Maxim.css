@@ -1,0 +1,225 @@
+* {
+    margin: 0; /* Reset margin for all elements */
+    padding: 0; /* Reset padding for all elements */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    font-family: 'Poppins', sans-serif; /* Set a default font family */
+}
+
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+header {
+    position: fixed; /* Keep header fixed at the top */
+    top: 0; /* Align header to the top of the page */
+    left: 0; /* Align header to the left of the page */
+    width: 100%; /* Full width */
+    padding: 30px 100px; /* Padding for top/bottom and left/right */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out header items */
+    align-items: center; /* Center align items vertically */
+    z-index: 100; /* Place header above other elements */
+}
+
+.logo {
+    font-size: 2em; /* Font size for logo */
+    color: #555; /* Default color for logo */
+    cursor: default; /* Default cursor for logo */
+}
+
+.logo span {
+    color: #006400; /* Highlight color for logo span */
+}
+
+.nav-link {
+    display: flex; /* Flexbox for navigation links */
+    align-items: center; /* Center align navigation items vertically */
+}
+
+.nav-link a, .dropdown a {
+    margin-right: 40px; /* Spacing between navigation links */
+    font-size: 1.1em; /* Font size for navigation links */
+    color: #555; /* Default color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: 500; /* Set font weight */
+    transition: .3s; /* Transition effect for hover state */
+    line-height: 20px; /* Line height for links */
+}
+
+.nav-link a:hover, .dropdown a:hover {
+    color: #006400; /* Change color on hover */
+}
+
+.dropdown {
+    position: relative; /* Position relative for dropdown functionality */
+    display: inline-block; /* Inline block for dropdown */
+}
+
+.dropdown-content {
+    display: none; /* Initially hidden dropdown content */
+    position: absolute; /* Position dropdown content absolutely */
+    background-color: #f9f9f9; /* Background color for dropdown */
+    min-width: 160px; /* Minimum width for dropdown */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow effect for dropdown */
+    z-index: 1; /* Layering for dropdown */
+    top: 100%; /* Position below the dropdown link */
+    left: 0; /* Align left */
+}
+
+.dropdown-content a {
+    color: #555; /* Color for dropdown links */
+    padding: 12px 16px; /* Padding for dropdown links */
+    text-decoration: none; /* Remove underline from dropdown links */
+    display: block; /* Block display for dropdown links */
+    font-size: 1em; /* Font size for dropdown links */
+    font-weight: 500; /* Font weight for dropdown links */
+    transition: .3s; /* Transition effect for dropdown links */
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd; /* Background color on hover for dropdown links */
+    color: #006400; /* Text color on hover for dropdown links */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown content on hover */
+}
+
+.home {
+    position: relative; /* Position relative for the home section */
+    width: 100%; /* Full width */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Center align items vertically */
+    padding: 30px 100px; /* Padding for the home section */
+}
+
+figure {
+    margin-right: 30px; /* Spacing for figure */
+}
+
+blockquote {
+    margin: 0; /* Reset margin for blockquote */
+    padding-left: 10px; /* Padding for left side of blockquote */
+    border-left: 3px solid #ccc; /* Left border for blockquote */
+}
+
+.content {
+    max-width: 500px; /* Maximum width for content */
+    color: #555; /* Color for text */
+    text-align: right; /* Align text to the right */
+    margin-left: auto; /* Push content to the right */
+}
+
+.content h2 {
+    font-size: 3em; /* Font size for main heading */
+}
+
+.content h2 span {
+    color: #006400; /* Highlight color for span in heading */
+}
+
+.content h4 {
+    font-size: 2em; /* Font size for subheading */
+}
+
+.content p {
+    padding: 10px 0 40px 0; /* Padding for paragraph */
+}
+
+.btn-group {
+    display: flex; /* Flexbox for button group */
+    flex-direction: row; /* Row layout for buttons */
+    justify-content: flex-end; /* Align buttons to the right */
+    position: relative; /* Relative positioning for button group */
+}
+
+.btn-group a {
+    color: #fff; /* Text color for buttons */
+    text-decoration: none; /* Remove underline from buttons */
+    padding: 10px 40px; /* Padding for buttons */
+    background: #006400; /* Background color for buttons */
+    border-radius: 10px; /* Rounded corners for buttons */
+    border: 2px solid #006400; /* Border for buttons */
+    font-weight: 500; /* Font weight for buttons */
+    transition: .3s; /* Transition effect for buttons */
+}
+
+.btn-group a:hover:nth-child(1) {
+    color: #006400; /* Text color on hover for first button */
+    background: transparent; /* Transparent background on hover */
+}
+
+.btn-group a:nth-child(2) {
+    color: #006400; /* Default text color for second button */
+    background: transparent; /* Transparent background for second button */
+    margin-left: 30px; /* Margin for second button */
+    padding: 10px 30px; /* Padding for second button */
+}
+
+.btn-group a:hover:nth-child(2) {
+    color: #fff; /* Text color on hover for second button */
+    background: #006400; /* Background color on hover for second button */
+}
+
+.social-icons {
+    position: absolute; /* Absolute positioning for social icons */
+    right: 100px; /* Align to the right */
+    bottom: 180px; /* Position from the bottom */
+}
+
+.social-icons a {
+    display: inline-block; /* Inline block display for social icons */
+    width: 35px; /* Width for social icons */
+    height: 35px; /* Height for social icons */
+    background: #006400; /* Background color for social icons */
+    border-radius: 50%; /* Circular shape for social icons */
+    margin-right: 22px; /* Spacing between social icons */
+    text-align: center; /* Center align icon */
+    line-height: 35px; /* Center icon vertically */
+    border: 1px solid #fff; /* White border for social icons */
+    outline: 2px solid #006400; /* Outline for social icons */
+    transition: .3s; /* Transition effect for social icons */
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.social-icons a i {
+    color: #fff; /* Icon color */
+}
+
+footer {
+    position: absolute; /* Absolute positioning for footer */
+    bottom: 0; /* Align to the bottom */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    background: #006400; /* Background color for footer */
+    height: auto; /* Auto height */
+    padding-top: 40px; /* Padding for top of footer */
+    width: 100vw; /* Full viewport width */
+    color: white; /* Text color for footer */
+}
+
+.footer-content h2 {
+    font-size: 2.1rem; /* Font size for footer heading */
+    font-weight: 500; /* Font weight for footer heading */
+    text-transform: capitalize; /* Capitalize footer heading */
+    line-height: 3rem; /* Line height for footer heading */
+}
+
+.footer-content {
+    display: flex; /* Flexbox for footer content */
+    align-items: center; /* Center align footer items vertically */
+    justify-content: center; /* Center align footer items horizontally */
+    flex-direction: column; /* Column layout for footer content */
+    text-align: center; /* Center align footer text */
+}
+
+.footer-content p {
+    max-width: 500px; /* Maximum width for footer paragraph */
+    margin: 18px auto; /* Margin for footer paragraph */
+    line-height: 5px; /* Line height for footer paragraph */
+    color: #cacdd2; /* Color for footer paragraph */
+}

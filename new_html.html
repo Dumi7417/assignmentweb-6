@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My webpage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="Duman.css">
+</head>
+<body style="overflow-x: hidden;">
+    <header style="position: fixed; top: 0; left: 0; width: 100%; padding: 30px 100px; display: flex; justify-content: space-between; align-items: center; z-index: 100;">
+        <h2 class="logo" style="font-size: 2em; color: #555; cursor: default;"><span style="color: #DC143C;">Code</span>Flow.</h2>
+        <nav class="navig" style="display: flex; align-items: center;">
+            <a href="main.html" style="margin-right: 40px; font-size: 1.1em; color: #555; text-decoration: none; font-weight: 500; transition: .3s; line-height: 20px;">Home</a>
+            <a href="about.html" style="margin-right: 40px; font-size: 1.1em; color: #555; text-decoration: none; font-weight: 500; transition: .3s; line-height: 20px;">About</a>
+            <a href="projects.html" style="margin-right: 40px; font-size: 1.1em; color: #555; text-decoration: none; font-weight: 500; transition: .3s; line-height: 20px;">Projects</a>
+            <div class="dropdown" style="position: relative; display: inline-block;">
+                <a href="#" style="margin-right: 40px; font-size: 1.1em; color: #555; text-decoration: none; font-weight: 500; transition: .3s; line-height: 20px;">Portfolio</a>
+                <div class="dropdown-content" style="display: none; position: absolute; background-color: #f9f9f9; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 1; top: 100%; left: 0;">
+                    <a href="Duman.html" style="color: #555; padding: 12px 16px; text-decoration: none; display: block; font-size: 1em; font-weight: 500; transition: .3s;">Duman's</a>
+                    <a href="Yera.html" style="color: #555; padding: 12px 16px; text-decoration: none; display: block; font-size: 1em; font-weight: 500; transition: .3s;">Yernur's</a>
+                    <a href="Maxim.html" style="color: #555; padding: 12px 16px; text-decoration: none; display: block; font-size: 1em; font-weight: 500; transition: .3s;">Maxim's</a>
+                </div>
+            </div>
+            <a href="contactus.html" style="margin-right: 40px; font-size: 1.1em; color: #555; text-decoration: none; font-weight: 500; transition: .3s; line-height: 20px;">Contact</a>
+        </nav>
+    </header>
+    <main style="position: relative; width: 100%; height: 100vh; display: flex; align-items: center; padding: 30px 100px;">
+        <section class="home">
+            <div class="content" style="max-width: 500px; color: #555;">
+                <h2 style="font-size: 3em;">Hi, I'm <span style="color: #DC143C;">Duman</span></h2>
+                <h4 style="font-size: 2em;">Frontend Developer</h4>
+                <p style="padding: 10px 0 40px 0;">A frontend developer who crafts beautiful, responsive websites using HTML, CSS, and JavaScript.
+                     I focus on clean, intuitive designs that work seamlessly across all devices. Check out my projects and let's connect to bring your ideas to life!</p>
+                <div class="btn-group">
+                    <a href="contactus.html" style="color: #fff; text-decoration: none; padding: 10px 40px; background: #DC143C; border-radius: 10px; border: 2px solid #DC143C; font-weight: 500; transition: .3s;">Hire me</a>
+                    <a href="projects.html" style="color: #DC143C; background: transparent; margin-left: 30px; padding: 10px 30px; text-decoration: none; border: 2px solid #DC143C; border-radius: 10px; font-weight: 500; transition: .3s;">Projects</a>
+                </div>
+            </div>
+            <figure style="position: relative; left: 200px;">
+                <img src="sticker.webp" alt="Blup blup blup" width="600" height="400">
+                <figcaption style="position: relative; left: 270px; color: #555;">
+                    <blockquote style="margin: 0; padding-left: 10px; border-left: 3px solid #ccc;">
+                        Drink juice buddies
+                    </blockquote>
+                </figcaption>
+            </figure>
+            <div class="social-icons" style="position: absolute; bottom: 180px;">
+                <a href="https://www.instagram.com/dum1bewatchinout?igsh=MjZzaXl0eXNiaDJr" style="display: inline-block; width: 35px; height: 35px; background: #DC143C; border-radius: 50%; margin-right: 22px; text-align: center; line-height: 35px; border: 1px solid #fff; outline: 2px solid #DC143C; transition: .3s;">
+                    <i class="fa-brands fa-instagram" style="color: #fff;"></i>
+                </a>
+                <a href="https://x.com/dum1lovesyou?s=21&t=73NIormgHXRtq9r1sSaXfA" style="display: inline-block; width: 35px; height: 35px; background: #DC143C; border-radius: 50%; margin-right: 22px; text-align: center; line-height: 35px; border: 1px solid #fff; outline: 2px solid #DC143C; transition: .3s;">
+                    <i class="fa-brands fa-x-twitter" style="color: #fff;"></i>
+                </a>
+                <a href="https://wa.me/+77002052625" style="display: inline-block; width: 35px; height: 35px; background: #DC143C; border-radius: 50%; margin-right: 22px; text-align: center; line-height: 35px; border: 1px solid #fff; outline: 2px solid #DC143C; transition: .3s;">
+                    <i class="fa-brands fa-whatsapp" style="color: #fff;"></i>
+                </a>
+            </div>
+        </section>
+        <footer style="position: absolute; bottom: 0; left: 0; right: 0; background: #DC143C; height: auto; padding-top: 40px; width: 100vw; color: white;">
+            <div class="footer-content" style="display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center;">
+                <h2 style="font-size: 2.1rem; font-weight: 500; text-transform: capitalize; line-height: 3rem;">CodeFlow.</h2>
+                <p style="max-width: 500px; margin: 18px auto; line-height: 5px; color: #cacdd2;">© 2024. This website and its content are protected by copyright.</p>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
