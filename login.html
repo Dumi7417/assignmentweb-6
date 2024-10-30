@@ -4,39 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Authentication</title>
-  <!-- Link to external stylesheet for custom styles -->
+  <!-- Подключение внешнего CSS для оформления -->
   <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <!-- Background overlay for visual effect -->
+    <!-- Фоновый эффект размытия -->
     <div class="background-blur"></div>
-    
-    <!-- Authentication container for login and logout sections -->
+
+    <!-- Контейнер для аутентификации -->
     <div class="auth-container">
-      
-      <!-- Login form for user input -->
-      <form id="login-form">
+      <!-- Форма для входа -->
+      <form id="login-form" class="hidden">
         <h2>Login to CodeFlow.</h2>
         <label for="username">Username:</label>
         <input type="text" id="username" required>
-        
+
         <label for="password">Password:</label>
         <input type="password" id="password" required>
-  
+
         <button type="submit">Log In</button>
-        <!-- Placeholder for displaying login status messages -->
         <p id="message"></p>
+        <p>Don’t have an account? <a href="#" id="go-to-register">Register here</a></p>
       </form>
-  
-      <!-- Section shown only after successful login -->
+
+      <!-- Форма для регистрации -->
+      <form id="register-form" class="hidden">
+        <h2>Register an Account</h2>
+        <label for="new-username">Username:</label>
+        <input type="text" id="new-username" required>
+
+        <label for="new-password">Password:</label>
+        <input type="password" id="new-password" required>
+
+        <button type="submit">Register</button>
+        <p id="register-message"></p>
+        <p>Already have an account? <a href="#" id="go-to-login">Log in here</a></p>
+      </form>
+
+      <!-- Секция после входа -->
       <div id="logout-section" class="hidden">
         <h2>Welcome, <span id="user-name"></span>!</h2>
         <button id="logout-button">Log Out</button>
         <a href="main.html"><button id="visit-website-button">Visit Website</button></a>
       </div>
     </div>
-  
-    <!-- Link to JavaScript file handling login/logout actions -->
+
+    <!-- Подключение JavaScript для управления логикой -->
     <script src="login.js"></script>
-  </body>
+</body>
 </html>
