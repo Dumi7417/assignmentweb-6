@@ -14,7 +14,7 @@
     <header class="bg-dark text-white py-3 px-sm-4">
         <h2 class="logo">Code<span>Flow.</span></h2>
         <nav class="nav-link" id="navbar">
-            <a href="main.html" tabindex="0">Home</a>
+            <a href="index.html" tabindex="0">Home</a>
             <a href="about.html" tabindex="0">About</a>
             <a href="projects.html" tabindex="0">Projects</a>
             <div class="dropdown">
@@ -26,6 +26,7 @@
                 </div>
             </div>
             <a href="contactus.html" tabindex="0">Contact</a>
+            <a href="account.html" tabindex="0">Account</a>
             <a id="logout-button" href="login.html">Log Out</a>
         </nav>
         <div class="language-selector">
@@ -36,6 +37,7 @@
                 <option value="kz">Kazakh</option>
             </select>
         </div>
+        <button id="dark-mode-btn" class="btn btn-dark btn-lg mt-4">Switch to Dark Mode</button>
         
     </header>
 
@@ -70,9 +72,9 @@
                     <figure class="col-lg-6 text-center">
                         <img src="effortless.png" alt="Yernur Developer" class="img-fluid">
                         <figcaption>
-                            <blockquote class="mt-lg-3">
+                            <p class="mt-lg-3">
                                 <p>Programming with eyes closed</p>
-                            </blockquote>
+                            </p>
                         </figcaption>
                     </figure>
                 </div>
@@ -80,7 +82,7 @@
         </section>
     
         <section class="bg-primary text-white py-5">
-            <div class="container text-center mb-4">
+            <div class="container text-center mb-4 mobile-container">
                 <h2>Tournaments</h2>
                 <section id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -151,7 +153,7 @@
             </div>
         </div>  
         <section class="more-about-me">
-            <div class="container">
+            <div class="container mobile-about-me">
                 <h2>More About Me</h2>
                 <div class="row">
                     <div class="col-lg-4 mb-4">
@@ -193,7 +195,7 @@
         </section>
         <button id="read-more-btn">Read More</button>
         <section class="contact-form-section py-5">
-            <div class="container">
+            <div class="container mobile-contact-us">
                 <h2>Contact Us</h2>
                 <form id="contact-form">
                     <div>
@@ -214,7 +216,7 @@
             </div>
         </section>
         <section class="faq-section py-5">
-            <div class="container">
+            <div class="container mobile-asked-questions">
                 <h2>Frequently Asked Questions</h2>
                 <div class="faq-item">
                     <h3 class="faq-question">What is your development experience?</h3>

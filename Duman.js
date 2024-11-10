@@ -31,9 +31,9 @@ const body = document.body;
 
 themeToggle.addEventListener('change', function() {
     if (this.checked) {
-        body.classList.add('night-mode');
+        body.classList.add('night-mode'); 
     } else {
-        body.classList.remove('night-mode');
+        body.classList.remove('night-mode'); 
     }
 });
 
@@ -99,3 +99,5 @@ document.getElementById("logout-button").addEventListener("click", () => {
     localStorage.removeItem("username");
     displayLogin();
   });
+
+

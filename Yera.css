@@ -38,7 +38,6 @@ header {
     display: flex;
     align-items: center;
 }
-/* styles.css */
 
 nav {
     text-align: center;
@@ -408,6 +407,10 @@ button {
     color: black;
 }
 
+.center-container {
+    height: auto;
+}
+
 footer {
     background-color: #001f54;
     padding: 40px;
@@ -494,4 +497,196 @@ main {
     background-color: #0a2e6b;
     border-left: 2px solid white;
     transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 0;
+    }
+
+    .mobile-container {
+        display: flex;
+        flex-direction: column  ;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .nav-link {
+        flex-direction: column;
+        align-items: center ;
+        width: 100%;
+    }
+
+    .nav-link a {
+        font-size: 1em;
+        margin: 5px 0;
+    }
+
+    .language-selector {
+        margin-top: 10px;
+    }
+
+    .home {
+        padding: 50px 15px;
+    }
+
+    .content h2 {
+        font-size: 2em;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .mobile-about-me {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-contact-us {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-asked-questions {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-group .btn {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+        margin-top: 10px;
+        width: 100%; 
+    }
+
+    figure {
+        margin-top: 20px;
+    }
+
+    .img-fluid {
+        width: 100%;
+        height: auto;
+    }
+
+    .carousel-inner img {
+        height: auto;
+        width: 100%;
+    }
+
+    .hobbies {
+        text-align: center;
+    }
+
+    .hobbies .card-body h5,
+    .hobbies .card-body p {
+        font-size: 0.9rem;
+    }
+
+    .hobbies .card {
+        margin-bottom: 20px;
+    }
+
+    .more-about-me .card {
+        margin-bottom: 20px;
+    }
+
+    .contact-form-section {
+        padding: 20px;
+        background-color: #f9f9f9;
+        color: #000;
+    }
+
+    .contact-form-section form {
+        flex-direction: column;
+    }
+
+    .contact-form-section input,
+    .contact-form-section textarea {
+        width: 100%;
+    }
+
+    .faq-section {
+        padding: 20px;
+    }
+
+    .faq-question {
+        font-size: 1.2em;
+    }
+
+    .faq-answer {
+        font-size: 1rem;
+    }
+
+    .popup-form {
+        padding: 20px;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .popup-content {
+        width: 100%;
+    }
+
+    .center-container {
+        height: auto;
+    }
+
+    footer {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .footer-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.3em;
+    }
+
+    .content h2 {
+        font-size: 1.5em;
+    }
+
+    .btn-group .btn {
+        font-size: 0.8rem;
+        padding: 6px 15px;
+    }
+
+    .hobbies .card-body h5,
+    .hobbies .card-body p {
+        font-size: 0.8rem;
+    }
+
+    .contact-form-section {
+        padding: 10px;
+    }
+
+    .faq-section {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
 }

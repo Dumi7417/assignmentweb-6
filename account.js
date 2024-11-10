@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const changeImageBtn = document.getElementById("changeImageBtn");
     const removeImageBtn = document.getElementById("removeImageBtn");
     const uploadImageBtn = document.getElementById("uploadImageBtn");
+    const userName = document.getElementById("userName");
+    const userEmail = document.getElementById("userEmail"); // Поменяем это на пароль
 
     // Показать форму загрузки
     changeImageBtn.addEventListener("click", () => {
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Удаление изображения
     removeImageBtn.addEventListener("click", () => {
-        profileImage.src = "default-profile.jpg";
+        profileImage.src = "default-profile.png";
         localStorage.removeItem("profileImage");
     });
 
@@ -35,5 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const savedImage = localStorage.getItem("profileImage");
     if (savedImage) {
         profileImage.src = savedImage;
+    }
+
+    // Получить и отобразить имя пользователя и пароль
+    const storedUsername = localStorage.getItem("username");
+    const storedPassword = localStorage.getItem(storedUsername);
+    if (storedUsername && storedPassword) {
+        userName.textContent = storedUsername;
+        userEmail.textContent = `Password: ${storedPassword}`;
+    } else {
+        // Перенаправление на страницу входа, если имя пользователя или пароль не найден
+        window.location.href = "login.html";
     }
 });

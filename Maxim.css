@@ -223,3 +223,213 @@ footer {
     line-height: 5px; /* Line height for footer paragraph */
     color: #cacdd2; /* Color for footer paragraph */
 }
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* Light text color */
+}
+
+body.dark-mode header, 
+body.dark-mode footer {
+    background-color: #1e1e1e; /* Dark background for header and footer */
+    color: #ffffff; /* Light text for header and footer */
+}
+
+body.dark-mode .nav-link a,
+body.dark-mode .dropdown-content a {
+    color: #ffffff; /* Light text for navigation links */
+}
+
+body.dark-mode .dropdown-content {
+    background-color: #333; /* Dark background for dropdown */
+}
+
+body.dark-mode .btn {
+    background-color: #444; /* Dark background for buttons */
+    color: #fff; /* Light text for buttons */
+}
+
+body.dark-mode .content h2 span {
+    color: #ffffff; /* Light text for highlighted span */
+}
+
+body.dark-mode .social-icons a {
+    background-color: #333; /* Dark background for social icons */
+    border-color: #444; /* Dark border for social icons */
+}
+
+/* Add styles for dark mode */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text color */
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #1e1e1e; /* Darker background for header and footer */
+}
+
+body.dark-mode .content h2,
+body.dark-mode .content h4,
+body.dark-mode .content p {
+    color: #ffffff; /* White text color for headings and paragraphs */
+}
+
+body.dark-mode .nav-link a,
+body.dark-mode .dropdown-content a {
+    color: #ffffff; /* White text color for navigation links */
+}
+
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+        flex-direction: column;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .nav-link {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .nav-link a, .dropdown a {
+        font-size: 1em;
+        margin: 10px 0;
+    }
+
+    .dropdown-content {
+        min-width: 100%;
+    }
+
+    .home {
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+        align-items: flex-start;
+    }
+
+    figure {
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    figure img {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        max-width: 100%;
+        text-align: left;
+        margin: 0;
+    }
+
+    .content h2 {
+        font-size: 2em;
+    }
+
+    .content h4 {
+        font-size: 1.5em;
+    }
+
+    .content p {
+        font-size: 1rem;
+        padding: 10px 0 20px 0;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .btn-group a {
+        padding: 10px 20px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn-group a:nth-child(2) {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .social-icons {
+        position: static;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .social-icons a {
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    /* Footer adjustments */
+    footer {
+        position: relative;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .footer-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.3em;
+    }
+
+    .home {
+        padding: 15px;
+    }
+
+    .content h2 {
+        font-size: 1.5em;
+    }
+
+    .content h4 {
+        font-size: 1.2em;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+    .btn-group a {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+
+    .social-icons a {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .footer-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .footer-content p {
+        font-size: 0.8rem;
+    }
+}

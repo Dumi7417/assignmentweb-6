@@ -166,3 +166,31 @@ p {
     font-size: 1rem; /* Default font size for paragraphs */
     color: #555; /* Dark gray color */
 }
+
+body.night {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.night-header {
+    background-color: #1e1e1e !important; 
+    color: #ffffff;
+  }
+
+.night-footer {
+  background-color: #000000 !important;
+  color: #ffffff;
+}
+
+.night-navbar {
+    background-color: #1e1e1e !important; 
+    color: #ffffff; 
+  }
+  
+  .night-link {
+    color: #ffffff !important; 
+  }
+
+  .night-navbar-brand {
+    color: #ffffff !important;
+  }

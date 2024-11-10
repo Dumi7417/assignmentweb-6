@@ -8,7 +8,7 @@
 
 /* Ensure full height and prevent overflow on body */
 html, body {
-    overflow: hidden; /* Prevent scrolling */
+    /* Prevent scrolling */
     height: 100%; /* Set full height for body */
 }
 
@@ -28,7 +28,7 @@ header {
 
 /* Height for header when fixed */
 .header-height {
-    height: 80px; /* Fixed height for header */
+    height: 80px; 
 }
 
 /* Styles for the logo */
@@ -110,7 +110,7 @@ main {
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center items */
-    padding-top: 80px; /* Space below fixed header */
+    padding-top: 80px;
 }
 
 /* Styles for about section */
@@ -137,17 +137,18 @@ main {
 /* Row styles for project cards */
 .row {
     display: flex; /* Use flexbox for layout */
-    flex-wrap: wrap; /* Allow wrapping of items */
-    justify-content: center; /* Center items */
-    gap: 16px; /* Space between cards */
-    padding: 0 20px; /* Horizontal padding */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 16px; /* Space between items */
+    padding: 0 10px; /* Add horizontal padding */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 /* Column styles for project cards */
 .column {
-    flex: 1 1 30.1%; /* Flexible column size */
-    max-width: 30.1%; /* Maximum width for column */
-    box-sizing: border-box; /* Include padding in width */
+    flex: 0 0 auto; /* Prevent columns from shrinking */
+    width: 80%; /* Adjust width to make items scrollable */
+    max-width: none; /* Remove max-width constraint */
 }
 
 /* Card styling for project cards */
@@ -197,7 +198,7 @@ main {
 
 /* Footer styling */
 footer {
-    position: absolute; /* Position at the bottom */
+    position: relative; /* Position at the bottom */
     bottom: 0; /* Align to the bottom */
     left: 0; /* Align to the left */
     right: 0; /* Align to the right */
@@ -233,11 +234,141 @@ footer {
     color: #cacdd2; /* Text color */
 }
 
-/* Media query for responsive design */
-@media screen and (max-width: 650px) {
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text color */
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #1e1e1e; /* Darker background for header and footer */
+}
+
+body.dark-mode .about-section {
+    background-color: #333; /* Dark background for about section */
+    color: #ffffff; /* White text */
+}
+
+body.dark-mode .card {
+    background-color: #2c2c2c; /* Dark background for cards */
+    color: #ffffff; /* White text */
+}
+
+body.dark-mode .button {
+    background-color: #555; /* Darker background for button */
+    color: #ffffff; /* White text */
+}
+
+body.dark-mode .nav-item a,
+body.dark-mode .dropdown-content a {
+    color: #ffffff; /* White text color for navigation links */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    main {
+        padding-top: 0;
+    }
+    /* Header adjustments */
+    header {
+        padding: 15px;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .logo {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .nav-item {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-item a, .dropdown a {
+        font-size: 1em;
+        margin: 10px 0;
+    }
+
+    .dropdown-content {
+        min-width: 100%;
+    }
+
+    /* Main content adjustments */
+    .about-section {
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+
     .column {
-        width: 100%; /* Full width for columns on small screens */
-        display: block; /* Block display */
-        flex: none; /* Disable flex behavior */
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .card {
+        transform: scale(1); /* Remove scaling for better mobile fit */
+        margin: 15px 0; /* Increase vertical margin for separation */
+    }
+
+    /* Button adjustments */
+    .button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .footer-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens adjustments */
+    .logo {
+        font-size: 1.3em;
+    }
+
+    .about-section {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    .row {
+        gap: 15px;
+    }
+
+    .card {
+        margin: 10px 0;
+    }
+
+    .button {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .footer-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .footer-content p {
+        font-size: 0.8rem;
     }
 }

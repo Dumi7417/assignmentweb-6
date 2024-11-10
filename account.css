@@ -91,56 +91,6 @@ header {
     display: block;
 }
 
-.home {
-    position: relative;
-    width: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 100px;
-}
-
-.center-content {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.center-img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.partners-section {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.partners-logos {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 10px;
-}
-
-.partner {
-    text-align: center;
-}
-
-.partner-logo {
-    width: 100px;
-    height: auto;
-}
-
-.partner p {
-    margin-top: 5px;
-    font-size: 1em;
-    color: #555;
-}
-
 footer {
     background: #26b1d0;
     height: auto;
@@ -173,100 +123,55 @@ footer {
     color: #cacdd2;
 }
 
-/* POPUP */
-.modal-header {
-    background-color: #08db3d;
-    color: white;
-}
-
-.modal-footer {
+/* Личный кабинет */
+.user-info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 450px; /* Увеличена высота контейнера */
 }
 
-.modal-body {
-    padding: 20px;
+.buttons-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрирование кнопок по вертикали */
+    gap: 15px; /* Увеличено расстояние между кнопками */
 }
 
-/* FAQ */
-.faq-section {
-    padding: 40px 100px;
-    background-color: #f9f9f9;
+.profile-column {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.accordion .card {
-    margin: 10px 0;
-}
-
-.accordion .btn-link {
-    color: #26b1d0;
-    text-decoration: none;
-}
-
-.accordion .btn-link:hover {
-    color: #1a8b9e;
-}
-
-.accordion .collapse {
-    border-top: 1px solid #26b1d0;
-}
-
-.greeting {
-    margin-top: 50px;
-    padding: 20px;
-}
-
-#greetingText {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-input#nameInput {
-    width: 50%;
+.profile-img-wrapper {
+    width: 225px; /* Увеличена ширина */
+    height: 225px; /* Увеличена высота */
+    overflow: hidden;
     margin: 0 auto;
 }
 
-button#updateGreetingBtn {
-    display: block;
-    margin: 10px auto;
-}
-
-button#updateGreetingBtn {
-    display: block;
-    margin: 10px auto;
-    background-color: #2b17a0;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button#updateGreetingBtn:hover {
-    background-color: #68a5ff;
-}
-
-button#updateGreetingBtn:active {
-    background-color: #6200b3;
-}
-
-.language-switch {
-    margin-left: 20px;
-}
-
-.language-switch button {
-    margin-top: 10px;
-}
-
-.surpriseImage {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+.profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1000; 
+    border-radius: 50%;
+}
+
+.profile-column h4, .profile-column p {
+    margin-top: 20px; /* Увеличено расстояние между текстом и фото */
+}
+
+/* Скрытые элементы */
+.hidden {
+    display: none;
+}
+
+.profile-img-wrapper button {
+    display: block;
+    width: 100%;
+    margin-top: 15px; /* Увеличено расстояние между кнопкой и фото */
 }

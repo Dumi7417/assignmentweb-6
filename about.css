@@ -27,6 +27,10 @@ header {
   height: 80px;
 }
 
+.about-section {
+  margin-top: 100px;
+}
+
 .logo {
   font-size: 2em;
   color: #555;
@@ -222,26 +226,177 @@ footer {
   color: #cacdd2;
 }
 
-@media screen and (max-width: 650px) {
+@media (max-width: 768px) {
+  body {
+      padding: 0 15px;
+  }
+
+  header {
+      position: relative;
+      padding: 15px;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .logo {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+  }
+
+  .nav-bar {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .nav-bar a, .dropdown a {
+      font-size: 1em;
+      margin: 10px 0;
+  }
+
+  .dropdown-content {
+      min-width: 100%;
+  }
+
+  .about-section {
+      margin-top: 0;
+      padding: 20px;
+      text-align: center;
+      font-size: 1rem;
+  }
+
+  .team-heading {
+      margin: 20px 0;
+      font-size: 1.5rem;
+  }
+
+  .row {
+      flex-direction: column;
+      padding: 0;
+      gap: 20px;
+  }
+
   .column {
-    width: 100%;
-    display: block;
-    flex: none;
+      width: 100%;
+      max-width: 100%;
+      flex: none;
+  }
+
+  .card {
+      margin: 15px auto;
+      width: 100%;
+      transform: scale(1);
+  }
+
+  .container {
+      padding: 10px;
+  }
+
+  .title {
+      font-size: 1rem;
+  }
+
+  .button {
+      font-size: 0.9rem;
+      padding: 10px;
+  }
+
+  footer {
+      padding: 20px;
+      text-align: center;
+  }
+
+  .footer-content h2 {
+      font-size: 1.8rem;
+  }
+
+  .footer-content p {
+      font-size: 0.9rem;
+  }
+
+  .rating i {
+      font-size: 1.5rem;
+      margin: 2px;
+  }
+
+  .carousel-inner img {
+      height: auto;
+      width: 100%;
+  }
+
+  .time-section {
+      position: static;
+      text-align: center;
+      margin-top: 10px;
   }
 }
 
-.rating-section {
-  margin-top: 10px;
+@media (max-width: 480px) {
+  .logo {
+      font-size: 1.3em;
+  }
+
+  .about-section {
+      font-size: 0.9rem;
+      padding: 15px;
+  }
+
+  .team-heading {
+      font-size: 1.3rem;
+  }
+
+  .card {
+      padding: 10px;
+  }
+
+  .button {
+      font-size: 0.8rem;
+      padding: 8px;
+  }
+
+  .footer-content h2 {
+      font-size: 1.6rem;
+  }
+
+  .footer-content p {
+      font-size: 0.8rem;
+  }
+
+  .rating i {
+      font-size: 1.2rem;
+      margin: 1px;
+  }
 }
 
-.rating i {
-  font-size: 1.8rem;
-  color: gray;
-  cursor: pointer;
-  transition: color 0.3s;
-  margin: 0 5px;
+.dark-mode {
+  background-color: black;
+  color: white;
 }
 
-.rating i.selected {
+.dark-mode-header {
+  background-color: #222;
+  color: white;
+}
+
+.dark-mode-footer {
+  background-color: #222;
+  color: white;
+}
+
+.dark-mode-link {
+  color: white !important;
+}
+
+.dark-mode-about-section {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode-card {
+  background-color: #444;
+  color: white;
+  border-color: #555;
+}
+
+.dark-mode-star {
   color: gold;
 }

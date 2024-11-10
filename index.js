@@ -48,7 +48,7 @@ document.addEventListener('keydown', (event) => {
 
 // Смена фона
 document.getElementById('colorChangeBtn').addEventListener('click', function () {
-    document.body.style.backgroundColor = getRandomColor();
+    document.body.classList.toggle('dark-mode');
 });
 
 // RANDOM BACKGROUND
@@ -78,4 +78,4 @@ displayDateTime();
 document.getElementById("logout-button").addEventListener("click", () => {
     localStorage.removeItem("username");
     displayLogin();
-  });
+});
