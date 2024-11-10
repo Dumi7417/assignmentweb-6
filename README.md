@@ -3,7 +3,7 @@
 ### 👥 Team Members:
 
 - **Duman**: Developed three pages under the **Portfolio** tab - `Duman's`, `Yernur's`, and `Maxim's` pages.
-- **Maxim**: Created the **Home**, **About**, and **Log Out** pages.
+- **Maxim**: Created the **Home**, **About**, **Log Out**, and **Log Out** pages.
 - **Yernur**: Designed the **Projects** and **Contacts** pages.
 
 ---
