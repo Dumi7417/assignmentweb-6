@@ -9,15 +9,11 @@
     <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-    
     <header>
-        <div class="logo-date">
-            <div id="dateTime" class="date-time"></div>
-            <h2 class="logo"><span>Code</span>Flow.</h2>
-        </div>
-        <!-- Navigation Bar -->
+        <div id="dateTime" class="date-time"></div>
+        <h2 class="logo"><span>Code</span>Flow.</h2>
         <nav class="nav-bar" tabindex="0">
-            <a href="index.html">Home</a>
+            <a href="main.html">Home</a>
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
             <div class="dropdown">
@@ -31,16 +27,15 @@
             <a href="contactus.html">Contact</a>
             <a href="account.html">Account</a>
             <a class="nav-link" id="logout-button" href="login.html">Log Out</a>
+            <button id="themeToggleBtn" class="btn btn-dark ml-3">Night Mode</button> <!-- New button -->
         </nav>
         <div class="language-switch">
             <button id="languageBtn" class="btn btn-secondary">Switch Language</button>
         </div>
-        <button id="colorChangeBtn" class="color-button">Change Background Color</button>
     </header>
     <main>
         <div class="greeting text-center">
             <h2 id="greetingText">Hello, Guest!</h2>
-            <input type="text" id="nameInput" placeholder="Enter your name" class="form-control mt-2" />
             <button id="updateGreetingBtn" class="btn btn-success mt-2">Update Greeting</button>
         </div>
         <section class="home">
@@ -65,7 +60,7 @@
                 </div>
             </div>
         </section>
-        <!-- Carousel -->
+
         <section class="home text-center">
             <div id="collaborationCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -157,10 +152,12 @@
             </div>
         </section>
 
+        <!-- Contact Popup -->
         <div class="text-center" style="margin: 40px 0;">
             <button id="contactBtn" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#contactModal">Contact Us</button>
         </div>
 
+        <!-- Contact Modal -->
         <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -184,24 +181,18 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" form="contactForm" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary">Send</button>
                     </div>
                 </div>
             </div>
         </div>
-
-        <footer>
-            <div class="footer-content">
-                <h2>CodeFlow</h2>
-                <p>© 2024. Все права защищены.</p>
-                <p>Разработали Думан, Максим и Ернур.</p>
-            </div>
-        </footer>
-    </main>  
+    </main>
+    <footer>
+        <p>&copy; 2024 CodeFlow. All Rights Reserved.</p>
+    </footer>
     <img id="surpriseImage" src="photo/surprise.jpg" alt="Surprise" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:1000;" />
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/index.js"></script>
 </body>
 </html>

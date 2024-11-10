@@ -2,18 +2,47 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 52px; 
 }
+/* Dark Theme Styles */
+body.night-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+header.night-mode, footer.night-mode {
+  background-color: #1e1e1e;
+}
+
+.nav-bar a.night-mode {
+  color: #e0e0e0;
+}
+
+.nav-bar a.night-mode:hover {
+  color: #26b1d0;
+}
+
+/* Additional styling for the dropdown in night mode */
+.dropdown-content.night-mode {
+  background-color: #333;
+}
+
+.dropdown-content.night-mode a:hover {
+  background-color: #444;
+  color: #26b1d0;
+}
+
 
 main {
   flex: 1;
-  margin-top: 70px;
+  padding-top: 52px; 
 }
 
 header {
@@ -43,19 +72,17 @@ header {
   align-items: center;
 }
 
-.nav-bar a,
-.dropdown a {
+.nav-bar a, .dropdown a {
   margin-right: 40px;
   font-size: 1.1em;
   color: #555;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
+  transition: .3s;
   line-height: 20px;
 }
 
-.nav-bar a:hover,
-.dropdown a:hover {
+.nav-bar a:hover, .dropdown a:hover {
   color: #26b1d0;
 }
 
@@ -69,7 +96,7 @@ header {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   top: 100%;
   left: 0;
@@ -82,7 +109,7 @@ header {
   display: block;
   font-size: 1em;
   font-weight: 500;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 .dropdown-content a:hover {
@@ -194,7 +221,21 @@ footer {
 /* FAQ */
 .faq-section {
   padding: 40px 100px;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Default light background */
+}
+/* Make sure the text in the FAQ card body stays black, even in night mode */
+.faq-section .card-body {
+  color: #000 !important; /* Always black text */
+}
+
+/* Optional: Prevent night mode from changing the text color */
+body.night-mode .faq-section .card-body {
+  color: #000 !important; /* Ensure it remains black in night mode */
+}
+
+
+body.night-mode .faq-section {
+  background-color: #1e1e1e; /* Night mode background */
 }
 
 .accordion .card {
@@ -268,206 +309,14 @@ button#updateGreetingBtn:active {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1000;
+  width: 100vw; /* Используем 100% от ширины окна */
+  height: 100vh; /* Используем 100% от высоты окна */
+  object-fit: cover; /* Картинка будет покрывать весь экран */
+  z-index: 1000; 
 }
 
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-
-.dark-mode header,
-.dark-mode footer {
-  background-color: black;
-  color: white;
-}
-
-.dark-mode .nav-bar a,
-.dark-mode .dropdown-content a,
-.dark-mode .footer-content h2,
-.dark-mode .footer-content p,
-.dark-mode .faq-section,
-.dark-mode .modal-header,
-.dark-mode .btn,
-.dark-mode .greeting,
-.dark-mode #greetingText {
-  color: white;
-}
-
-.dark-mode .modal-content {
-  background-color: black;
-  color: white;
-}
-
-.dark-mode .btn {
-  background-color: #333;
-  border-color: #fff;
-}
-
-.dark-mode .btn:hover {
-  background-color: #555;
-}
-
-.dark-mode .dropdown-content a:hover {
-  background-color: #333;
-}
-
-.dark-mode .card,
-.dark-mode .partners-logos .partner p {
-  background-color: #222;
-  color: white;
-}
-
-.dark-mode .faq-section {
-  background-color: black;
-  color: white;
-}
-
-.dark-mode .card {
-  background-color: #333;
-  border-color: #555;
-}
-
-.dark-mode .card-header {
-  background-color: #444;
-  border-color: #555;
-}
-
-.dark-mode .btn-link {
-  color: #ddd;
-}
-
-.dark-mode .btn-link:hover {
-  color: #fff;
-}
-
-.dark-mode .card-body {
-  background-color: #222;
-  color: white;
-}
-
-
-@media (max-width: 768px) {
-    body {
-        padding: 0 15px;
-    }
-
-    header {
-        display: flex;
-        padding: 15px;
-        flex-direction: column;
-        width: 100%;
-        position: relative;
-        flex-direction: column;
-    }
-
-    .logo {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-    }
-
-    .nav-bar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .logo-date {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .nav-bar a, .dropdown a {
-        font-size: 1em;
-        margin: 10px 0;
-    }
-
-    .greeting {
-        margin-top: 20px;
-        padding: 15px;
-        width: 100%;
-        text-align: center;
-    }
-
-    #greetingText {
-        font-size: 1.5rem;
-    }
-
-    input#nameInput {
-        width: 100%;
-        margin: 10px auto;
-    }
-
-    button#updateGreetingBtn {
-        width: 100%;
-        padding: 8px;
-        font-size: 0.9rem;
-    }
-
-    section {
-        padding: 20px 0;
-        width: 100%;
-        text-align: center;
-    }
-
-    .home {
-        padding: 20px 0;
-    }
-
-    .center-content {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .center-img {
-        width: 100%;
-        height: auto;
-    }
-
-    .partners-section {
-        margin-top: 30px;
-    }
-
-    .partners-logos {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .partner-logo {
-        width: 80px;
-    }
-
-    footer {
-        padding: 20px;
-        text-align: center;
-    }
-
-    .faq-section {
-        padding: 20px;
-    }
-
-    #collaborationCarousel {
-        margin-top: 20px;
-    }
-
-    .modal-body {
-        padding: 15px;
-    }
-
-    .modal-footer {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .modal-footer .btn {
-        margin: 5px 0;
-    }
-    
-    .footer-text {
-        padding-top: 20px;
-    }
+#nameInput, #phone, #message {
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
