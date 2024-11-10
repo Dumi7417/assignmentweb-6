@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateGreetingBtn = document.getElementById('updateGreetingBtn');
     const languageBtn = document.getElementById('languageBtn');
     const navLinks = document.querySelectorAll('.nav-bar a');
-    const soundEffect = new Audio('notification.mp3');
+    const soundEffect = new Audio('/audio/notification.mp3');
     const surpriseImage = document.getElementById('surpriseImage');
 
     updateGreetingBtn.addEventListener('click', () => {
