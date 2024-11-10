@@ -50,3 +50,34 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "login.html";
     }
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const profileImage = document.getElementById("profileImage");
+    const profileImageInput = document.getElementById("profileImageInput");
+    const uploadForm = document.getElementById("uploadForm");
+    const changeImageBtn = document.getElementById("changeImageBtn");
+    const removeImageBtn = document.getElementById("removeImageBtn");
+    const uploadImageBtn = document.getElementById("uploadImageBtn");
+    const userName = document.getElementById("userName");
+    const userEmail = document.getElementById("userEmail");
+    const themeToggleBtn = document.getElementById("themeToggleBtn");
+
+    // Toggle theme mode
+    themeToggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("night-mode");
+        document.querySelector("header").classList.toggle("night-mode");
+        document.querySelector("footer").classList.toggle("night-mode");
+
+        // Update all navigation links and dropdown content
+        document.querySelectorAll(".nav-bar a").forEach(link => link.classList.toggle("night-mode"));
+        document.querySelector(".dropdown-content").classList.toggle("night-mode");
+
+        // Toggle button text
+        if (document.body.classList.contains("night-mode")) {
+            themeToggleBtn.textContent = "Day Mode";
+        } else {
+            themeToggleBtn.textContent = "Night Mode";
+        }
+    });
+
+    // Remaining existing code for image handling and user info...
+});

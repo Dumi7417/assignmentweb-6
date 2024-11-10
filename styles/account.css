@@ -10,6 +10,33 @@ body {
     display: flex;
     flex-direction: column;
 }
+/* Dark Theme Styles */
+body.night-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+header.night-mode, footer.night-mode {
+    background-color: #1e1e1e;
+}
+
+.nav-bar a.night-mode {
+    color: #e0e0e0;
+}
+
+.nav-bar a.night-mode:hover {
+    color: #26b1d0;
+}
+
+/* Additional styling for the dropdown in night mode */
+.dropdown-content.night-mode {
+    background-color: #333;
+}
+
+.dropdown-content.night-mode a:hover {
+    background-color: #444;
+    color: #26b1d0;
+}
 
 main {
     flex: 1;
