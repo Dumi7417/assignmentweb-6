@@ -20,12 +20,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('DSC08375-copy-scaled-800x533.jpg');
+    background-image: url('/photo/DSC08375-copy-scaled-800x533.jpg');
     background-size: cover;
     background-position: center;
     filter: blur(8px); /* Applies the blur effect */
     z-index: -1; /* Places it behind the auth-container */
-  }
+}
   
   .auth-container {
     width: 300px;
