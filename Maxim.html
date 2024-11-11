@@ -1,68 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8"> <!-- Character encoding for the document -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design settings -->
-    <title>My webpage</title> <!-- Title of the webpage -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="styles/Maxim.css"> <!-- Link to external CSS file for styles -->
+    <!-- Meta and CSS links -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Bootstrap for responsive layout and styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="styles/Maxim.css">
 </head>
+
 <body>
-    <header> <!-- Header section containing the logo and navigation -->
-        <h2 class="logo"><span>Code</span>Flow.</h2> <!-- Logo for the website -->
-        <nav class="nav-link"> <!-- Navigation links -->
-            <a href="index.html">Home</a> <!-- Link to the main page -->
-            <a href="about.html">About</a> <!-- Link to the about page -->
-            <a href="projects.html">Projects</a> <!-- Link to the projects page -->
-            <div class="dropdown"> <!-- Dropdown menu for portfolio links -->
-                <a href="#">Portfolio</a> <!-- Dropdown toggle link -->
-                <div class="dropdown-content"> <!-- Content for the dropdown -->
-                    <a href="Duman.html">Duman's</a> <!-- Link to Duman's portfolio -->
-                    <a href="Yera.html">Yernur's</a> <!-- Link to Yernur's portfolio -->
-                    <a href="Maxim.html">Maxim's</a> <!-- Link to Maxim's portfolio -->
+    <!-- Header section with navigation and theme toggle -->
+    <header class="container-fluid bg-danger text-white">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#"><span>Code</span>Flow.</a>
+            <!-- Toggler for small screens -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar menu items -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" id="nav-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Portfolio
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="Duman.html">Duman's</a>
+                            <a class="dropdown-item" href="Yera.html">Yernur's</a>
+                            <a class="dropdown-item" href="Maxim.html">Maxim's</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactus.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="account.html">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="logout-button" href="login.html">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Theme toggle button -->
+            <div class="theme-switch">
+                <label for="themeToggle">Switch to Night Mode</label>
+                <input type="checkbox" id="themeToggle">
+            </div>
+            <!-- Time display section -->
+        </nav>        
+        <div class="time-display text-center my-4">
+            <button id="showTimeBtn" class="btn btn-outline-primary">Show Current Time</button>
+            <p id="currentTime" class="mt-2"></p>
+        </div>
+    </header>
+    <!-- Main content section -->
+    <main class="container my-4 my-lg-5">
+        <section class="home">
+            <div class="content mb-4">
+                <h2>Hi, I'm <span>Maxim</span></h2>
+                <h4>Frontend Developer</h4>
+                <p>A frontend developer who crafts beautiful, responsive websites using HTML, CSS, and JavaScript. I focus on clean, intuitive designs that work seamlessly across all devices. Check out my projects and let's connect to bring your ideas to life!</p>
+                <div class="btn-group mb-3">
+                    <a href="contactus.html" class="btn btn-primary" role="button">Hire me</a>
+                    <a href="projects.html" class="btn btn-outline-primary" role="button">Projects</a>
                 </div>
             </div>
-            <a href="contactus.html">Contact</a> <!-- Link to the contact page -->
-            <a href="account.html">Account</a> <!-- Link to the Account page -->
-            <a id="logout-button" href="login.html">Log Out</a> <!-- Link to log out -->
-        </nav>
-        <!-- Dark Mode Toggle Button -->
-        <button id="darkModeToggle" class="btn">Toggle Dark Mode</button>
-    </header>
-    <main> <!-- Main content area -->
-        <section class="home"> <!-- Home section -->
-            <figure> <!-- Figure for image and caption -->
-                <img src="photo/2024-09-08 13.37.06.jpg" alt="Maxim developer" width="600" height="400"> <!-- Image of the developer -->
-                <figcaption> <!-- Caption for the image -->
-                    <blockquote> <!-- Quotation block -->
-                        I'm geeked uuuuuppP!!!
+            <figure class="mb-4">
+                <img src="photo/maxim.png" alt="Duman Developer" class="img-fluid">
+                <figcaption>
+                    <blockquote>
+                        Drink tea guys.
                     </blockquote>
                 </figcaption>
-            </figure>  
-            <div class="content"> <!-- Content container -->
-                <h2>Hello guys, I'm <span>Maxim</span></h2> <!-- Introduction heading -->
-                <h4>Web-Designer</h4> <!-- Subtitle indicating profession -->
-                <p>As a web designer, I create modern and intuitive user interfaces that combine aesthetics with functionality. 
-                   My goal is to enhance the user experience through careful attention to detail and a unique approach to each project.</p> <!-- Description paragraph -->
-                <div class="btn-group"> <!-- Button group for action buttons -->
-                    <a href="contactus.html">Hire me</a> <!-- Link to hire -->
-                    <a href="projects.html">Projects</a> <!-- Link to view projects -->
-                </div>               
+            </figure>
+        </section>
+
+        <div class="tournaments">
+            <h2>Tournament achievements</h2>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="photo/Codejam.jpg" class="d-block w-100" alt="GoogleCodeJam" width="600" height="600">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="photo/hackathon2024.png" class="d-block w-100" alt="Hackathon2024" width="600" height="600">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="photo/ICPC.jpg" class="d-block w-100" alt="ICPC Tournament" width="600" height="600">
+                    </div>
+                </div>
+
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <div class="social-icons"> <!-- Social media icons section -->
-                <a href="https://www.instagram.com/dum1bewatchinout?igsh=MjZzaXl0eXNiaDJr"><i class="fa-brands fa-instagram"></i></a> <!-- Instagram link -->
-                <a href="https://x.com/dum1lovesyou?s=21&t=73NIormgHXRtq9r1sSaXfA"><i class="fa-brands fa-x-twitter"></i></a> <!-- Twitter link -->
-                <a href="https://wa.me/+77002052625"><i class="fa-brands fa-whatsapp"></i></a> <!-- WhatsApp link -->
+        </div>
+        <!-- 'Read More' section to reveal additional content -->
+        <div class="content-section">
+            <p id="extraContent" style="display: none;">
+            A little fact: I was awarded as "the most original problem-solving" award at all 3 tournaments.
+            </p>
+            <button id="readMoreBtn" class="btn btn-outline-primary">Read More</button>
+        </div>
+        
+
+        <div class="hobbies">
+            <h2>My Hobbies</h2>
+            <div class="row my-4">
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="photo/VALORANT_Jett_Red_crop.webp" class="card-img-top" alt="Chess" height="460">
+                        <div class="card-body">
+                            <h5 class="card-title">Valorant.</h5>
+                            <p class="card-text">Valorant is my hobby since 2021.</p>
+                            <p class="card-text">My go-to weapin is Azimov.</p>
+                            <p class="card-text">My favorite player is S1mple.</p>                    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="photo/L-2767670-1704068850-3633.jpg" class="card-img-top" alt="Running" height="460">
+                        <div class="card-body">
+                            <h5 class="card-title">Opium Gang.</h5>
+                            <p class="card-text">My go-to music in Spotify.</p>
+                            <p class="card-text">3249 min. - Spotify listening time.</p>
+                            <p class="card-text">My favorite member is Ken Carson.</p>                    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="photo/1968199_86122039.jpeg" class="card-img-top" alt="Tea" height="460">
+                        <div class="card-body">
+                            <h5 class="card-title">Tea.</h5>
+                            <p class="card-text">I love Shchavelevy tea.</p>
+                            <p class="card-text">Drinking only with ice.</p>
+                            <p class="card-text">I drink it usually in the evening.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="row">
+            <div class="col-lg-4 mb-4">
+                <h3>Skills</h3>
+                <p>HTML, CSS, JavaScript</p>
+                <p>React.js, Node.js</p>
+                <p>Bootstrap</p>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h3>Job experience</h3>
+                <p>Apple</p>
+                <p>MetaCode</p>
+                <p>Microsoft</p>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <h3>Talents</h3>
+                <p>Attentive and Diligent Person</p>
+                <p>Fast Coding</p>
+                <p>Clean code</p>
             </div>
         </section>
-        <footer> <!-- Footer section -->
-            <div class="footer-content"> <!-- Container for footer content -->
-                <h2>CodeFlow.</h2> <!-- Footer title -->
-                <p>© 2024. All rights reserved.</p> 
-                <p>By Duman, Maxim, and Yernur.</p>
+        <div class="subscribe-section text-center my-4">
+            <button type="button" class="btn btn-outline-primary" id="subscribeBtn">Subscribe</button>
+        </div>
+
+        <div id="subscribeModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="subscribeModalLabel">Subscribe to my newsletter</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="subscribeForm">
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </footer>
-    </main>     
-    <script src="scripts/Maxim.js"></script> <!-- Link to external JavaScript file -->
+        </div>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div id="faqAccordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What is your favorite programming language?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            My favorite programming language is JavaScript.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                What frameworks do you use?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            I use React and Bootstrap for frontend development.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                How can I contact you?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            You can contact me through my email or social media.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="contact-form-container">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+    
+                <button type="submit">Submit</button>
+            </form>
+            <div id="success-message" class="success-message">Your message has been sent successfully!</div>
+        </div>
+        
+        <div class="rating-container">
+            <h1>Rate us!</h1>
+            <div class="star-rating">
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+            </div>
+            <button id="submitRating">Submit Rating</button>
+            <p id="rating-message"></p>
+        </div>
+        
+    </main>
+    
+
+    <footer class="bg-danger text-white text-center">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>© 2024. All rights reserved. By Duman, Maxim, and Yernur.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts/Maxim.js"></script>
 </body>
+
 </html>
+

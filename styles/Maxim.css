@@ -1,435 +1,452 @@
 * {
-    margin: 0; /* Reset margin for all elements */
-    padding: 0; /* Reset padding for all elements */
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-    font-family: 'Poppins', sans-serif; /* Set a default font family */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 html, body {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+}
+body {
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.night-mode {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+body.night-mode header, 
+body.night-mode footer {
+    background-color: #333;
+}
+
+.night-mode .btn,
+.night-mode .navbar, 
+.night-mode .card {
+    background-color: #222;
+    color: #fff;
+}
+
+.night-mode .navbar, 
+.night-mode .card, 
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-hire-me, .btn-projects {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hire-me:hover, .btn-projects:hover {
+    background-color: #c0392b;
+}
+
+.night-mode .btn-theme-switch {
+    background-color: #444;
+    color: #fff;
 }
 
 header {
-    position: fixed; /* Keep header fixed at the top */
-    top: 0; /* Align header to the top of the page */
-    left: 0; /* Align header to the left of the page */
-    width: 100%; /* Full width */
-    padding: 30px 100px; /* Padding for top/bottom and left/right */
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space out header items */
-    align-items: center; /* Center align items vertically */
-    z-index: 100; /* Place header above other elements */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+body {
+    padding-top: 100px; 
 }
 
 .logo {
-    font-size: 2em; /* Font size for logo */
-    color: #555; /* Default color for logo */
-    cursor: default; /* Default cursor for logo */
+    font-size: 2em;
+    color: #555;
+    cursor: default;
 }
 
 .logo span {
-    color: #006400; /* Highlight color for logo span */
+    color: #9d1010;
+}
+
+.navbar-brand {
+    color: #3f3535;
+}
+
+.navbar-brand span {
+    color: #000000;
 }
 
 .nav-link {
-    display: flex; /* Flexbox for navigation links */
-    align-items: center; /* Center align navigation items vertically */
+    margin-right: 40px;
+    font-size: 1.1em;
+    color: #3f3535;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .3s;
+    line-height: 20px;
 }
 
-.nav-link a, .dropdown a {
-    margin-right: 40px; /* Spacing between navigation links */
-    font-size: 1.1em; /* Font size for navigation links */
-    color: #555; /* Default color for links */
-    text-decoration: none; /* Remove underline from links */
-    font-weight: 500; /* Set font weight */
-    transition: .3s; /* Transition effect for hover state */
-    line-height: 20px; /* Line height for links */
+.nav-link:hover {
+    color: #000000;
+    background-color: transparent;
 }
 
 .nav-link a:hover, .dropdown a:hover {
-    color: #006400; /* Change color on hover */
+    color: #000000;
 }
 
 .dropdown {
-    position: relative; /* Position relative for dropdown functionality */
-    display: inline-block; /* Inline block for dropdown */
+    position: relative;
+    display: inline-block;
 }
 
 .dropdown-content {
-    display: none; /* Initially hidden dropdown content */
-    position: absolute; /* Position dropdown content absolutely */
-    background-color: #f9f9f9; /* Background color for dropdown */
-    min-width: 160px; /* Minimum width for dropdown */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow effect for dropdown */
-    z-index: 1; /* Layering for dropdown */
-    top: 100%; /* Position below the dropdown link */
-    left: 0; /* Align left */
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
 }
 
 .dropdown-content a {
-    color: #555; /* Color for dropdown links */
-    padding: 12px 16px; /* Padding for dropdown links */
-    text-decoration: none; /* Remove underline from dropdown links */
-    display: block; /* Block display for dropdown links */
-    font-size: 1em; /* Font size for dropdown links */
-    font-weight: 500; /* Font weight for dropdown links */
-    transition: .3s; /* Transition effect for dropdown links */
+    color: #555;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1em;
+    font-weight: 500;
+    transition: .3s;
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd; /* Background color on hover for dropdown links */
-    color: #006400; /* Text color on hover for dropdown links */
+    background-color: #ddd;
+    color: #16c260;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block; /* Show dropdown content on hover */
+    display: block;
+}
+.nav-item.focused {
+    background-color: #ddd;
+    color: #000;
+}
+
+header {
+    display: flex;                   
+    justify-content: space-between;  
+    align-items: center;             
+    padding: 10px 20px;              
+}
+
+.time-display {
+    margin-left: auto;               
+}
+
+#showTimeBtn {
+    margin-right: 10px;              
 }
 
 .home {
-    position: relative; /* Position relative for the home section */
-    width: 100%; /* Full width */
-    height: 100vh; /* Full viewport height */
-    display: flex; /* Flexbox for layout */
-    align-items: center; /* Center align items vertically */
-    padding: 30px 100px; /* Padding for the home section */
-}
-
-figure {
-    margin-right: 30px; /* Spacing for figure */
-}
-
-blockquote {
-    margin: 0; /* Reset margin for blockquote */
-    padding-left: 10px; /* Padding for left side of blockquote */
-    border-left: 3px solid #ccc; /* Left border for blockquote */
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
 }
 
 .content {
-    max-width: 500px; /* Maximum width for content */
-    color: #555; /* Color for text */
-    text-align: right; /* Align text to the right */
-    margin-left: auto; /* Push content to the right */
+    max-width: 500px;
+    color: #555;
 }
 
 .content h2 {
-    font-size: 3em; /* Font size for main heading */
+    font-size: 3em;
 }
 
 .content h2 span {
-    color: #006400; /* Highlight color for span in heading */
+    color: #9d1010;
 }
 
 .content h4 {
-    font-size: 2em; /* Font size for subheading */
+    font-size: 2em;
 }
 
 .content p {
-    padding: 10px 0 40px 0; /* Padding for paragraph */
+    padding: 10px 0 40px 0;
 }
 
-.btn-group {
-    display: flex; /* Flexbox for button group */
-    flex-direction: row; /* Row layout for buttons */
-    justify-content: flex-end; /* Align buttons to the right */
-    position: relative; /* Relative positioning for button group */
+.tournaments {
+    text-align: center;
+}
+
+#extraContent {
+    margin-top: 10px;
+}
+
+.hobbies {
+    text-align: center;
 }
 
 .btn-group a {
-    color: #fff; /* Text color for buttons */
-    text-decoration: none; /* Remove underline from buttons */
-    padding: 10px 40px; /* Padding for buttons */
-    background: #006400; /* Background color for buttons */
-    border-radius: 10px; /* Rounded corners for buttons */
-    border: 2px solid #006400; /* Border for buttons */
-    font-weight: 500; /* Font weight for buttons */
-    transition: .3s; /* Transition effect for buttons */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 40px;
+    background: #9d1010;
+    border-radius: 10px;
+    border: 2px solid #9d1010;
+    font-weight: 500;
+    transition: .3s;
 }
 
 .btn-group a:hover:nth-child(1) {
-    color: #006400; /* Text color on hover for first button */
-    background: transparent; /* Transparent background on hover */
+    color: #9d1010;
+    background: transparent;
 }
 
 .btn-group a:nth-child(2) {
-    color: #006400; /* Default text color for second button */
-    background: transparent; /* Transparent background for second button */
-    margin-left: 30px; /* Margin for second button */
-    padding: 10px 30px; /* Padding for second button */
+    color: #9d1010;
+    background: transparent;
+    margin-left: 30px;
+    padding: 10px 30px;
 }
 
 .btn-group a:hover:nth-child(2) {
-    color: #fff; /* Text color on hover for second button */
-    background: #006400; /* Background color on hover for second button */
+    color: #fff;
+    background: #9d1010;
+}
+
+figure {
+    position: relative;
+    left: 100px;
+}
+
+figcaption {
+    position: relative;
+    left: 270px;
+}
+
+blockquote {
+    margin: 0;
+    padding-left: 10px;
+    border-left: 3px solid #ccc;
 }
 
 .social-icons {
-    position: absolute; /* Absolute positioning for social icons */
-    right: 100px; /* Align to the right */
-    bottom: 180px; /* Position from the bottom */
+    position: relative;
+    margin-top: 60px;
 }
 
 .social-icons a {
-    display: inline-block; /* Inline block display for social icons */
-    width: 35px; /* Width for social icons */
-    height: 35px; /* Height for social icons */
-    background: #006400; /* Background color for social icons */
-    border-radius: 50%; /* Circular shape for social icons */
-    margin-right: 22px; /* Spacing between social icons */
-    text-align: center; /* Center align icon */
-    line-height: 35px; /* Center icon vertically */
-    border: 1px solid #fff; /* White border for social icons */
-    outline: 2px solid #006400; /* Outline for social icons */
-    transition: .3s; /* Transition effect for social icons */
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #9d1010;
+    border-radius: 50%;
+    margin-right: 22px;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid #fff;
+    outline: 2px solid #9d1010;
+    transition: .3s;
 }
 
 .social-icons a:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px);
 }
 
 .social-icons a i {
-    color: #fff; /* Icon color */
+    color: #fff;
+}
+.success-message {
+    display: none;
+    color: green;
+}
+
+.rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px; 
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.star {
+    font-size: 30px;
+    cursor: pointer;
+    color: #ccc; 
+}
+
+.star.selected {
+    color: gold;
+}
+
+#submitRating {
+    background-color: #9d1010; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submitRating:hover {
+    background-color: #9d1010;
+}
+
+#rating-message {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+#contact-form-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 footer {
-    position: absolute; /* Absolute positioning for footer */
-    bottom: 0; /* Align to the bottom */
-    left: 0; /* Align to the left */
-    right: 0; /* Align to the right */
-    background: #006400; /* Background color for footer */
-    height: auto; /* Auto height */
-    padding-top: 40px; /* Padding for top of footer */
-    width: 100vw; /* Full viewport width */
-    color: white; /* Text color for footer */
-}
-
-.footer-content h2 {
-    font-size: 2.1rem; /* Font size for footer heading */
-    font-weight: 500; /* Font weight for footer heading */
-    text-transform: capitalize; /* Capitalize footer heading */
-    line-height: 3rem; /* Line height for footer heading */
+    background: #9d1010;
+    padding: 40px 0;
+    color: white;
+    clear: both;
 }
 
 .footer-content {
-    display: flex; /* Flexbox for footer content */
-    align-items: center; /* Center align footer items vertically */
-    justify-content: center; /* Center align footer items horizontally */
-    flex-direction: column; /* Column layout for footer content */
-    text-align: center; /* Center align footer text */
+    text-align: center;
+}
+
+.footer-content h2 {
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
 }
 
 .footer-content p {
-    max-width: 500px; /* Maximum width for footer paragraph */
-    margin: 18px auto; /* Margin for footer paragraph */
-    line-height: 5px; /* Line height for footer paragraph */
-    color: #cacdd2; /* Color for footer paragraph */
+    max-width: 500px;
+    margin: 18px auto;
+    line-height: 1.5;
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212; /* Dark background color */
-    color: #ffffff; /* Light text color */
+.faq {
+    margin-top: 40px;
 }
 
-body.dark-mode header, 
-body.dark-mode footer {
-    background-color: #1e1e1e; /* Dark background for header and footer */
-    color: #ffffff; /* Light text for header and footer */
+.faq .card-header button {
+    text-align: left;
+    width: 100%;
+    font-size: 1.2rem;
 }
 
-body.dark-mode .nav-link a,
-body.dark-mode .dropdown-content a {
-    color: #ffffff; /* Light text for navigation links */
+.faq .card-body {
+    font-size: 1rem;
 }
 
-body.dark-mode .dropdown-content {
-    background-color: #333; /* Dark background for dropdown */
+.modal-content {
+    padding: 20px;
 }
 
-body.dark-mode .btn {
-    background-color: #444; /* Dark background for buttons */
-    color: #fff; /* Light text for buttons */
+.modal-title {
+    font-size: 1.5rem;
 }
 
-body.dark-mode .content h2 span {
-    color: #ffffff; /* Light text for highlighted span */
+.modal-body .form-group {
+    margin-bottom: 20px;
 }
 
-body.dark-mode .social-icons a {
-    background-color: #333; /* Dark background for social icons */
-    border-color: #444; /* Dark border for social icons */
+body.night-mode {
+    background-color: #121212;
+    color: #f5f5f5;
 }
 
-/* Add styles for dark mode */
-body.dark-mode {
-    background-color: #121212; /* Dark background */
-    color: #ffffff; /* White text color */
+.night-mode header, 
+.night-mode footer {
+    background-color: #1e1e1e !important; 
+    color: #f5f5f5 !important; 
 }
 
-body.dark-mode header,
-body.dark-mode footer {
-    background-color: #1e1e1e; /* Darker background for header and footer */
+.night-mode .navbar {
+    background-color: #1e1e1e !important;
+    color: #f5f5f5;
 }
 
-body.dark-mode .content h2,
-body.dark-mode .content h4,
-body.dark-mode .content p {
-    color: #ffffff; /* White text color for headings and paragraphs */
+.night-mode .navbar a.nav-link,
+.night-mode .navbar-brand {
+    color: #f5f5f5 !important; 
 }
 
-body.dark-mode .nav-link a,
-body.dark-mode .dropdown-content a {
-    color: #ffffff; /* White text color for navigation links */
+.night-mode .btn {
+    background-color: #444; 
+    color: #fff; 
 }
 
-
-@media (max-width: 768px) {
-    header {
-        padding: 15px;
-        flex-direction: column;
-        position: relative;
-        display: flex;
-        align-items: center;
-    }
-
-    .logo {
-        font-size: 1.5em;
-        margin-bottom: 10px;
-    }
-
-    .nav-link {
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-    }
-
-    .nav-link a, .dropdown a {
-        font-size: 1em;
-        margin: 10px 0;
-    }
-
-    .dropdown-content {
-        min-width: 100%;
-    }
-
-    .home {
-        height: auto;
-        flex-direction: column;
-        padding: 20px;
-        align-items: flex-start;
-    }
-
-    figure {
-        margin-bottom: 20px;
-        max-width: 100%;
-    }
-
-    figure img {
-        width: 100%;
-        height: auto;
-    }
-
-    .content {
-        max-width: 100%;
-        text-align: left;
-        margin: 0;
-    }
-
-    .content h2 {
-        font-size: 2em;
-    }
-
-    .content h4 {
-        font-size: 1.5em;
-    }
-
-    .content p {
-        font-size: 1rem;
-        padding: 10px 0 20px 0;
-    }
-
-    .btn-group {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 20px;
-    }
-
-    .btn-group a {
-        padding: 10px 20px;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .btn-group a:nth-child(2) {
-        margin-left: 0;
-        margin-bottom: 0;
-    }
-
-    .social-icons {
-        position: static;
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    .social-icons a {
-        margin-right: 10px;
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-    }
-
-    /* Footer adjustments */
-    footer {
-        position: relative;
-        padding: 20px;
-        text-align: center;
-    }
-
-    .footer-content h2 {
-        font-size: 1.8rem;
-    }
-
-    .footer-content p {
-        font-size: 0.9rem;
-    }
+.night-mode .content h2,
+.night-mode .content h4,
+.night-mode .content p {
+    color: #f5f5f5; 
 }
 
-@media (max-width: 480px) {
-    .logo {
-        font-size: 1.3em;
-    }
+.night-mode .home .content h2 span {
+    color: #f5f5f5; 
+}
 
-    .home {
-        padding: 15px;
-    }
+.night-mode .home .content {
+    color: #f5f5f5;
+}
 
-    .content h2 {
-        font-size: 1.5em;
-    }
-
-    .content h4 {
-        font-size: 1.2em;
-    }
-
-    .content p {
-        font-size: 0.9rem;
-    }
-
-    .btn-group a {
-        padding: 8px 15px;
-        font-size: 0.8rem;
-    }
-
-    .social-icons a {
-        width: 25px;
-        height: 25px;
-        line-height: 25px;
-    }
-
-    .footer-content h2 {
-        font-size: 1.6rem;
-    }
-
-    .footer-content p {
-        font-size: 0.8rem;
-    }
+.night-mode .tournaments h2,
+.night-mode .hobbies h2,
+.night-mode .faq h2,
+.night-mode .faq .card-header button {
+    color: #f5f5f5; 
 }
