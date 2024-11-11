@@ -8,7 +8,10 @@
 
 ---
 
-## 📁 Project Structure
+## 📁 Project
+Our project, CodeFlow, is a website created by a team of three web developers – Maxim, Duman, and Yernur. Together, we make up a small IT company dedicated to showcasing our expertise in web development. Each team member has a dedicated portfolio section on the website, highlighting individual projects, skills, and achievements.
+
+CodeFlow represents our collaborative work and experience with major companies like Apple, Facebook, and Meta. We've also had the privilege of working with cutting-edge AI startups, including Sardine.ai, Lyra.com, and Placer.ai, delivering innovative website solutions tailored to their needs.
 
 ### 🔗 Pages Overview
 
