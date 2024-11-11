@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const greetingText = document.getElementById('greetingText');
     const updateGreetingBtn = document.getElementById('updateGreetingBtn');
     const languageBtn = document.getElementById('languageBtn');
-    const surpriseImage = document.getElementById('surpriseImage');
+    const surpriseImage = document.getElementById('photo_2024-11-11 22.26.54.jpeg');
     const navLinks = document.querySelectorAll('.nav-bar a');
     const soundEffect = new Audio('/audio/notification.mp3');
 
