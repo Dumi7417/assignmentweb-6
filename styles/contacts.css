@@ -1,196 +1,107 @@
-/* Resetting default padding and margin for all elements */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box; /* Ensures padding and border are included in element's total width and height */
-    font-family: 'Poppins', sans-serif; /* Sets the font family for the entire document */
-}
-
-/* Body styling */
 body {
-    height: 100%; /* Full height of the viewport */
-    display: flex; /* Enables flexbox layout */
-    flex-direction: column; /* Stacks child elements vertically */
+    font-family: Arial, sans-serif;
 }
 
-/* Main section styles */
-main {
-    flex: 1; /* Allows main section to grow and fill available space */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
 }
 
-/* Header styles */
-header {
-    position: fixed; /* Fixes the header to the top of the page */
+.text-center {
+    text-align: center;
+}
+
+.my-5 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.overlay {
+    display: none; /* Initially hidden */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Full width of the viewport */
-    z-index: 100; /* Ensures header is on top of other content */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
 
-/* Navbar styling */
-.navbar {
-    padding: 15px 30px; /* Padding for navbar */
+#popupForm {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo styling */
-.logo {
-    font-size: 2em; /* Increases logo font size */
-    color: #555; /* Dark gray color for logo */
-    cursor: default; /* Default cursor style for logo */
+#rating .star {
+    font-size: 24px;
+    color: #ffd700;
+    cursor: pointer;
 }
 
-/* Navbar item spacing */
-.nav-item a {
-    margin-right: 20px; /* Space between navbar items */
+.faq-answer {
+    display: none; /* Hide answer initially */
 }
 
-/* Section header styles */
-h2 {
-    position: relative; /* Allows for absolute positioning of pseudo-elements */
-    padding: 0 0 10px; /* Bottom padding for the header */
-    margin-bottom: 10px; /* Space below the header */
-}
-
-/* Underline styling for section headers */
-h2:after {
-    content: ''; /* Creates a pseudo-element without any text */
-    position: absolute; /* Positions it absolutely within h2 */
-    left: 50%; /* Centers it horizontally */
-    bottom: 0; /* Aligns it at the bottom of h2 */
-    transform: translateX(-50%); /* Adjusts to perfect center */
-    height: 4px; /* Height of the underline */
-    width: 50px; /* Width of the underline */
-    border-radius: 2px; /* Rounds the edges of the underline */
-    background-color: #2ecc71; /* Green color for the underline */
-}
-
-/* Contact box layout styles */
-.contact-box {
-    max-width: none; /* No maximum width restriction */
-    width: auto; /* Width based on content */
-    display: grid; /* Enables grid layout for child elements */
-    grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
-    justify-content: center; /* Centers grid items */
-    align-items: center; /* Vertically centers items */
-    text-align: center; /* Centers text inside contact box */
-    background-color: #fff; /* White background for contact box */
-    box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19); /* Shadow effect for depth */
-}
-
-/* Left section with background image */
-.left {
-    background: url("Дизайн без названия copy 6.png") no-repeat center; /* Background image centered */
-    background-size: cover; /* Covers the entire area of the section */
-    height: 100%; /* Full height */
-}
-
-/* Right section padding */
-.right {
-    padding: 25px 40px; /* Inner padding for content */
-}
-
-/* Input field styles */
-.field {
-    width: 100%; /* Full width of the parent */
-    border: 2px solid rgba(0, 0, 0, 0); /* Transparent border initially */
-    outline: none; /* Removes default outline */
-    background-color: rgba(230, 230, 230, 0.6); /* Light gray background */
-    padding: 0.5rem 1rem; /* Inner padding */
-    font-size: 1.1rem; /* Increases font size */
-    margin-bottom: 22px; /* Space below each field */
-    transition: .3s; /* Smooth transition for hover effects */
-}
-
-/* Textarea minimum height */
-textarea {
-    min-height: 150px; /* Ensures minimum height for text areas */
-}
-
-/* Button styles */
-.btn {
-    width: 100%; /* Full width of the parent */
-    padding: 0.5rem 1rem; /* Inner padding for button */
-    background-color: #2ecc71; /* Green button color */
-    color: #fff; /* White text color */
-    font-size: 1.1rem; /* Increases font size */
-    border: none; /* No border */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: .3s; /* Smooth transition for hover effects */
-}
-
-/* Button hover effect */
-.btn:hover {
-    background-color: #27ae60; /* Darker green on hover */
-}
-
-/* Footer styles */
-.footer {
-    background: #1fbb60; /* Green background for footer */
-    color: white; /* White text color */
-    padding: 40px 0; /* Vertical padding for footer */
-}
-
-/* Footer content layout */
-.footer-content {
-    display: flex; /* Enables flex layout */
-    align-items: center; /* Centers items vertically */
-    justify-content: center; /* Centers items horizontally */
-    flex-direction: column; /* Stacks items vertically */
-    text-align: center; /* Centers text inside footer */
-}
-
-/* Email section layout */
-.email-section {
-    display: flex; /* Enables flex layout */
-    flex-direction: column; /* Stacks items vertically */
-    align-items: center; /* Centers items horizontally */
-}
-
-/* Email column styling */
-.email-column {
-    padding: 20px; /* Inner padding for email column */
-    background-color: #f5f5f5; /* Light gray background */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Shadow effect for depth */
-    border-radius: 8px; /* Rounded corners for email column */
-    margin-bottom: 20px; /* Space below email column */
-}
-
-/* Email text styling */
-.email {
-    font-size: 1.5rem; /* Increases font size for email text */
-    color: #2ecc71; /* Green color for email text */
-}
-
-/* Paragraph styling */
-p {
-    font-size: 1rem; /* Default font size for paragraphs */
-    color: #555; /* Dark gray color */
-}
-
-body.night {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-.night-header {
-    background-color: #1e1e1e !important; 
+.dark-theme {
+    background-color: #121212;
     color: #ffffff;
-  }
-
-.night-footer {
-  background-color: #000000 !important;
-  color: #ffffff;
 }
-
-.night-navbar {
-    background-color: #1e1e1e !important; 
-    color: #ffffff; 
-  }
-  
-  .night-link {
-    color: #ffffff !important; 
-  }
-
-  .night-navbar-brand {
-    color: #ffffff !important;
-  }

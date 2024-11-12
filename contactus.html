@@ -10,18 +10,18 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <!-- Linking custom CSS file -->
-    <link rel="stylesheet" type="text/css" href="styles/contacts.css" />
+    <link rel="stylesheet" type="text/css" href="contacts.css" />
 
     <style>
       /* Resetting margin and padding for the body and html */
-      html,
-      body {
+      html, body {
         margin: 0;
         padding: 0;
         width: 100%;
         height: 100%;
         overflow-x: hidden; /* Prevent horizontal overflow */
       }
+
       /* Wrapper to enable flexbox layout */
       .wrapper {
         display: flex;
@@ -35,10 +35,13 @@
         padding-top: 80px;
         padding-bottom: 20px;
       }
+
       /* FAQ section styling */
       .faq {
+        text-align: center; /* Center the FAQ content */
         margin-bottom: 50px;
       }
+
       /* Popup form styling */
       #popupForm {
         display: none; /* Hidden by default */
@@ -73,11 +76,6 @@
         font-size: 1.2rem;
       }
 
-      /* Time display styling */
-      #refreshTime {
-        font-size: 0.8rem;
-        padding: 5px 10px;
-      }
       /* Star rating styling */
       .star {
         cursor: pointer; /* Change cursor on hover */
@@ -89,6 +87,7 @@
       .selected {
         color: gold; /* Highlight selected stars */
       }
+
       /* Day and Night theme styles */
       body.day {
         background-color: white;
@@ -99,6 +98,55 @@
         background-color: black;
         color: white;
       }
+
+      /* Toggle button for night/day mode */
+      .toggle-btn input {
+        display: none;
+      }
+      
+      .toggle-btn {
+        position: relative;
+        width: 60px;
+        height: 34px;
+      }
+      
+      .toggle-btn .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+      
+      .toggle-btn .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        border-radius: 50%;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+      }
+      
+      input:checked + .slider {
+        background-color: #4caf50;
+      }
+      
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+
+      /* Style for the Contact Us button */
+      #openContactForm {
+        display: block;
+        margin: 0 auto 30px auto; /* Centered button with margin below */
+      }
     </style>
   </head>
   <body class="day">
@@ -106,42 +154,80 @@
       <!-- Header with navigation bar -->
       <header class="header night-header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">CodeFlow.</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">Portfolio</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="Duman.html">Duman's</a>
-                            <a class="dropdown-item" href="Yera.html">Yernur's</a>
-                            <a class="dropdown-item" href="Maxim.html">Maxim's</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="account.html">Account</a></li>
-                    <li class="nav-item"><a class="nav-link" id="logout-button" href="login.html">Log Out</a></li>
-                </ul>
-            </div>
+          <a class="navbar-brand" href="#">CodeFlow.</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="main.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                >
+                  Portfolio
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="Duman.html">Duman's</a>
+                  <a class="dropdown-item" href="Yera.html">Yernur's</a>
+                  <a class="dropdown-item" href="Maxim.html">Maxim's</a>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactus.html" onclick="showPopup()">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="logout-button" href="login.html">Log Out</a>
+              </li>
+            </ul>
+          </div>
         </nav>
-    </header>
+      </header>
 
       <!-- Main content area -->
       <main class="container my-5">
         <div class="row">
-          <!-- FAQ section -->
-          <div class="col-md-4 faq">
+          <!-- Centered FAQ section -->
+          <div class="col-12 col-md-8 offset-md-2 faq">
             <h3 class="faq-question">What are your working hours?</h3>
             <p class="faq-answer">We are available 24/7!</p>
+
+            <h3 class="faq-question">Where are you located?</h3>
+            <p class="faq-answer">We are based in Astana, Kazakhstan.</p>
+
+            <h3 class="faq-question">How can I contact you?</h3>
+            <p class="faq-answer">You can reach us via email or our contact form on the website.</p>
+
+            <h3 class="faq-question">Do you offer customer support?</h3>
+            <p class="faq-answer">Yes, we offer 24/7 customer support. Feel free to reach out anytime!</p>
           </div>
 
-          <!-- Rating section -->
-          <div class="col-md-4">
+          <!-- Contact Us button, centered above Rate Us -->
+          <div class="col-12 text-center mb-4">
+            <button id="openContactForm" class="btn btn-primary" onclick="showPopup()">Contact Us</button>
+          </div>
+
+          <!-- Toggle Night/Day theme -->
+          <div class="col-12 text-center mb-4">
+            <label class="toggle-btn">
+              <input type="checkbox" id="toggleThemeSwitch" />
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <!-- Rate Us section, moved to bottom of the page -->
+          <div class="col-12 text-center mt-5">
             <h3>Rate Us</h3>
             <div id="rating">
               <!-- Star rating system -->
@@ -151,65 +237,6 @@
               <span class="star" data-value="4">&#9733;</span>
               <span class="star" data-value="5">&#9733;</span>
             </div>
-          </div>
-
-          <!-- Buttons for various functionalities -->
-          <div class="col-12 my-4">
-            <button id="colorButton" class="btn btn-primary btn-lg mb-3">
-              Change Background Color
-            </button>
-            <button id="toggleTheme" class="btn btn-secondary btn-lg mb-3">
-              Toggle Day/Night Theme
-            </button>
-            <button id="openPopup" class="btn btn-success btn-lg mb-3">
-              Open Contact Form
-            </button>
-            <button id="showTimeButton" class="btn btn-info btn-lg mb-3">
-              Show Current Time
-            </button>
-          </div>
-
-          <!-- Overlay for popup form -->
-          <div id="overlay" class="overlay"></div>
-          <!-- Contact form popup -->
-          <div id="popupForm">
-            <button id="closePopup" class="btn btn-danger float-right">
-              Close
-            </button>
-            <form id="contactForm" onsubmit="return false;">
-              <div class="form-group">
-                <label for="name">Your Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  class="form-control"
-                  placeholder="Enter your name"
-                />
-              </div>
-              <div class="form-group">
-                <label for="email">Your Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  class="form-control"
-                  placeholder="Enter your email"
-                />
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone</label>
-                <input
-                  type="text"
-                  id="phone"
-                  class="form-control"
-                  placeholder="Enter your phone number"
-                />
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">
-                Submit
-              </button>
-            </form>
-            <div id="formFeedback" class="mt-3"></div>
-            <!-- Feedback message area -->
           </div>
         </div>
       </main>
@@ -227,4 +254,69 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
+</html>
+<!-- Popup form -->
+<div id="popupForm" class="overlay">
+  <div class="popup-content">
+    <div class="form-container">
+      <h2>Contact Us</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea class="form-control" id="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send a Message</button>
+        <button type="button" id="closePopup" class="btn btn-secondary">Close</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="contacts.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // Night/Day mode toggle
+  document.getElementById('toggleThemeSwitch').addEventListener('change', function () {
+    if (this.checked) {
+      document.body.classList.remove('day');
+      document.body.classList.add('night');
+    } else {
+      document.body.classList.remove('night');
+      document.body.classList.add('day');
+    }
+  });
+
+  // FAQ toggle functionality
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach((question) => {
+    question.addEventListener('click', function () {
+      const answer = this.nextElementSibling;
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+
+  // Show popup form
+  function showPopup() {
+    document.getElementById('popupForm').style.display = 'block';
+    document.querySelector('.overlay').style.display = 'block';
+  }
+
+  // Close popup form
+  document.getElementById('closePopup').addEventListener('click', function () {
+    document.getElementById('popupForm').style.display = 'none';
+    document.querySelector('.overlay').style.display = 'none';
+  });
+</script>
+</body>
 </html>
